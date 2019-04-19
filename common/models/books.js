@@ -2,9 +2,9 @@
 
 const esClient = require('../../lib/elasticsearch');
 module.exports = function (Books) {
-    Books.search = function(text) {
+    Books.suggest = function(text) {
         return new Promise((resolve, reject)=>{
-            esClient.search('book', 'bookInfo', text)
+            esClient.autosuggest('book', 'bookInfo', text)
             .then(resp=>{
                 resolve(resp)
             })
@@ -14,9 +14,9 @@ module.exports = function (Books) {
         })
       }
       Books.remoteMethod (
-            'search',
+            'suggest',
             {
-              http: {path: '/search', verb: 'get'},
+              http: {path: '/suggest', verb: 'get'},
               accepts: {arg: 'text', type: 'string', required: true, http: { source: 'query' } },
               returns: {arg: 'name', type: 'string'}
             }
