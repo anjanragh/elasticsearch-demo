@@ -14,7 +14,7 @@
     ]
   },
   "Books": {
-    "dataSource": null,
+    "dataSource": "mongoDs",
     "public": true
   }
 }
