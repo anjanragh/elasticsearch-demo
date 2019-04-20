@@ -16,11 +16,11 @@
   "Books": {
     "dataSource": "mongoDs",
     "public": true,
-    "options":{
+    "options": {
       "remoting": {
         "sharedMethods": {
-          "*":false,
-          "search":true
+          "*": false,
+          "suggest": true
         }
       }
     }
