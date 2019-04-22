@@ -20,7 +20,8 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "suggest": true
+          "suggest": true,
+          "search": true
         }
       }
     }
